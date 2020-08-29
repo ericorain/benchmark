@@ -51,7 +51,7 @@ On a SG350-10 Cisco switch, the slowest library is Napalm with 7.58 seconds of c
 | Time to be in connection status  | 4.4587788581848145          | 1.1811323165893555               | 1.0350358486175537          |
 | Time of execution of the command | 5.999888896942139           | 1.6560468673706055               | 1.894153118133545           |
 
-## 1 - 5 Alcatel OS6900-X40
+## 1 - 5 Alcatel OS6850E-48X
 
 | Library / Technology             | Netmiko                     | Netmiko FAST CLI + expect_string | Netdev                      |
 |----------------------------------|-----------------------------|----------------------------------|-----------------------------|
