@@ -10,6 +10,16 @@ Library tested:
 
 Time used is in seconds.
 
+
+> Short talk on Alcatel switches:
+> 
+> After many tests I can say that Alcatel switches which use ssh-dss 512 do not work with ssh python libraries (i.e asyncssh and paramiko) because their low level of security. The key of the DSA keys is a problem for automation since ssh connections are just rejected by ssh library. The problem comes with the software version used and, unfortunately some hardware are out of support now. I have seen some workarounds but it mainly consists of decreasing the level of security of the ssh library commenting or removing some codes.
+OS6450-24 with software version 6.6.4.177.R01 is still in ssh-dss 512 so Netmiko or Netdev cannot access to it.
+OS6850E-48X	with software version 6.4.6.125.R01 (which is lowwer than 6.6 version) is have ssh-dss 1024 so it works (but more or less if we check below)
+With Alcatel OS 7.3+ et 8.4+ ecdsa-sha-nistp256 256 algorithm is used and there is no problem for Netmiko and Netdev.
+
+
+
 ## 1 - 1 Cisco SG350-10
 
 | Library / Technology             | Netmiko          | Netmiko FAST CLI + expect_string | Netdev           | Napalm           |
